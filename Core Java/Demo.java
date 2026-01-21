@@ -21,7 +21,13 @@ public class Demo
             //switch now can also return values
             // case 2 -> System.out.println("Tuesday"); 
             // case 3 -> System.out.println("Wednesday"); 
-            // case 4 -> System.out.println("Thursday"); 
+            // case 4 -> System.out.println("Thursday");
+
+        switch(n)
+        {
+            case 1: yield System.out.println("Monday"); 
+            case 2: yield System.out.println("Tuesday");  
+        }
 
         String result = switch(n)
         {
