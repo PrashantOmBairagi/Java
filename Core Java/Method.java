@@ -8,12 +8,7 @@ class Calculator
         System.out.println(a+b);
         return true;
     }
-    public Double add(Double a,int b)
-    {
-        System.out.println("in CalC !");
-        System.out.println(a+b);
-        return a+b;
-    }
+   
     public boolean add(int a,int b,int c)
     {
         System.out.println("in CalC !");
