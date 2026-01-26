@@ -15,5 +15,6 @@ public class CompositePattern{
             }
             System.out.println();
         }
+        System.out.println("thank you for Using.");
     }
 }
