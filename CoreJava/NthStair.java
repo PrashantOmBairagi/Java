@@ -6,7 +6,7 @@ public class NthStair {
         return stair(n-1)+stair(n-2);
     }
     static void main() {
-        int n = 5;
+        int n = 8;
         System.out.println(stair(n));
     }
 }
