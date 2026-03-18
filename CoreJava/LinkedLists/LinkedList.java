@@ -6,6 +6,9 @@ class Node{
         this.data=data;
     }
 
+    public Node(ListNode node) {
+        Node newnode = new Node(node);
+    }
 }
 
 public class LinkedList {

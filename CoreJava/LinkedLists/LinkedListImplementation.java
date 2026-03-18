@@ -4,6 +4,17 @@ class LinkedLists{
     static Node head;
     static Node tail;
     static int size;
+
+    static void addAtStart(int val){
+        Node temp = new Node(val);
+        if(head==null){
+            head = tail = temp;
+        }else{
+            temp.next = head;
+            head = temp;
+        }
+        size++;
+    }
     static void addAtEnd(int val){
         Node temp = new Node(val);
         if(head==null){
@@ -23,7 +34,7 @@ class LinkedLists{
             addAtEnd(val);
             return;
         }
-        if(idx>size){
+        if(idx>size || idx<0){
             System.out.println("Invalid Input!!");
             return;
         }
@@ -38,19 +49,48 @@ class LinkedLists{
         }
         size++;
     }
-    static void addAtStart(int val){
-        Node temp = new Node(val);
-        if(head==null){
-            head = tail = temp;
-        }else{
-            temp.next = head;
-            head = temp;
+    static int get(int idx) throws Error{
+        if(idx==0){
+            return head.data;
         }
-        size++;
+        if(idx==(size -1)){
+            return  tail.data;
+        }
+        if(idx >= size || idx<0){
+            throw new Error("Prashant Bhai Invalid Input!!");
+        }
+        Node temp = head;
+        for(int i=0;i<idx;i++){
+            temp = temp.next;
+            if(i==idx){
+                return temp.data;
+            }
+        }
+        return temp.data;
     }
-    int size(){
+    static void set(int idx,int val) throws Error{
+        if(idx==0){
+            head.data = val;
+            return;
+        }
+        if(idx==(size -1)){
+            tail.data = val;
+            return;
+        }
+        if(idx >= size || idx<0){
+            throw new Error("Prashant Bhai Invalid Input!!");
+        }
+        Node temp = head;
+        for(int i=0;i<idx;i++){
+            temp = temp.next;
+        }
+        temp.data = val;
+    }
+
+    static int size(){
         return size;
     }
+
     static void print(){
         Node temp = head;
         while(temp!=null){
@@ -76,8 +116,9 @@ public class LinkedListImplementation {
         LinkedLists.insertAt(3,70);
         System.out.println("Size = " +LinkedLists.size);
         LinkedLists.print();
-
-
+        System.out.println(LinkedLists.get(3));
+        LinkedLists.set(2,20);
+        LinkedLists.print();
     }
 
 }
