@@ -6,8 +6,6 @@ import java.util.stream.Stream;
 //Streams Basically are used to shorten the code palette.
 // Streams are used to perform bulk operations and process objects of Collections/ group of objects like List or ArrayList.
 
-// Rebased on 28-march-2026
-
 public class StreamBegin {
     static void main() {
         List<Integer> list = List.of(3,24,40,30,5,8,6,9,58);
