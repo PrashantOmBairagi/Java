@@ -22,5 +22,6 @@ public class StreamBegin {
         System.out.println(list.stream().distinct().collect(Collectors.toList()));
         System.out.println(list.stream().limit(2).collect(Collectors.toList()));
 
+
     }
 }
