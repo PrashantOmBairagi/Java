@@ -30,9 +30,10 @@ public class TreeNode {
         display(a);
         System.out.println("Sum = " + Sumtree(a));
         System.out.println("Multiply= " + mulTree(a));
-        System.out.println("Max = " + maxValofTree(a));
+        System.out.println("Max = " + maxValOfTree(a));
         System.out.println("SizeOfTree: "+ sizeOfTree(a));
-
+        int level = levelOfTree(a);
+        System.out.println("Level/height of Tree:" + level + "/" + (level-1) +" respectively");
 
     }
     private static void display(Node root) {
@@ -50,12 +51,16 @@ public class TreeNode {
         if(root == null) return 1;
         return root.val * mulTree(root.left) * mulTree(root.right);
     }
-    private static int maxValofTree( Node root) {
+    private static int maxValOfTree( Node root) {
         if(root == null) return 0;
-        return Math.max(root.val, Math.max(maxValofTree(root.left), maxValofTree(root.right)));
+        return Math.max(root.val, Math.max(maxValOfTree(root.left), maxValOfTree(root.right)));
     }
     private static int sizeOfTree( Node root) {
         if(root == null) return 0;
         return 1 + sizeOfTree(root.left) + sizeOfTree(root.right);
+    }
+    private static int levelOfTree( Node root) {
+        if(root == null) return 0;
+        return 1+ Math.max(levelOfTree(root.left), levelOfTree(root.right));
     }
 }
